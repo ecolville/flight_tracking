@@ -2,11 +2,13 @@
 
 // Description:   Access flight tracking API.  GEOG 576 Lab 6
 
-// Author:        Bucky Badger
+// Author:        Lisa Siewert
 
 const PORT = 8000
 
 // Import Required Modules
+const {runQueries} = require('../server/database.js')
+
 const express = require("express")
 
 const app = express() 
@@ -133,7 +135,7 @@ app.get('/flights/:airport_code', async (request, response) => {
           console.log(" +++++++++ calling runQueries() +++++++++++++++")
           
           // Used for lab 7
-          // runQueries(json)
+          runQueries(json)
 
           console.log(" +++++++++ completed runQueries() +++++++++++++++")
 
